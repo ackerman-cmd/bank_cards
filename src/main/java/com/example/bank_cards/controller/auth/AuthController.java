@@ -6,7 +6,6 @@ import com.example.bank_cards.controller.auth.dto.JwtTokenResponse;
 import com.example.bank_cards.controller.auth.dto.LoginCredentials;
 import com.example.bank_cards.service.auth.AuthService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

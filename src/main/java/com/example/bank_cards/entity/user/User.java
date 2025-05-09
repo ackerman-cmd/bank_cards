@@ -3,7 +3,9 @@ package com.example.bank_cards.entity.user;
 import com.example.bank_cards.entity.card.Card;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -34,8 +36,9 @@ public class User implements UserDetails {
     @Column(name = "email", nullable = false, unique = true)
     private String email;
 
-    @Column(name = "cards")
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "owner")
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     private List<Card> cards;
 
     @Override

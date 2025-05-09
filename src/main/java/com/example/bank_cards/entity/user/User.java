@@ -2,10 +2,7 @@ package com.example.bank_cards.entity.user;
 
 import com.example.bank_cards.entity.card.Card;
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -16,6 +13,8 @@ import java.util.List;
 @Entity
 @Table(name = "users")
 @NoArgsConstructor
+@Builder
+@AllArgsConstructor
 public class User implements UserDetails {
 
     @Id

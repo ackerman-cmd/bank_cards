@@ -1,4 +1,4 @@
-package com.example.bank_cards.controller.user.dto;
+package com.example.bank_cards.controller.auth.dto;
 
 public record LoginCredentials(
         String userName,

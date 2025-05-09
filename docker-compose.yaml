@@ -1,0 +1,10 @@
+include:
+  - 'devops/docker-compose-devops.yaml'
+services:
+  bank_app:
+    container_name: bank_app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"

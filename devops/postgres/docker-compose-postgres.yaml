@@ -1,0 +1,18 @@
+services:
+  db:
+    image: postgres:latest
+    container_name: postgres
+    environment:
+      POSTGRES_DB: "bank_cards"
+      POSTGRES_USER: "admin"
+      POSTGRES_PASSWORD: "secret"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init-db/init.sql:/docker-entrypoint-initdb.d/initDB.sql
+    networks:
+      - app-network
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U user -d bank_cards" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5

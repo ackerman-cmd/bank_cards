@@ -1,0 +1,3 @@
+include:
+  - 'networks/docker-compose-network.yaml'
+  - 'postgres/docker-compose-postgres.yaml'

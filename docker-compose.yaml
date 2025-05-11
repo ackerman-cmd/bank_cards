@@ -9,11 +9,11 @@ services:
     ports:
       - "8080:8080"
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres-db:5432/bank_cards
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/bank_cards
       - SPRING_DATASOURCE_USERNAME=admin
       - SPRING_DATASOURCE_PASSWORD=secret
     depends_on:
-      - db
+      - postgres
     networks:
       - app-network
     healthcheck:

@@ -7,6 +7,6 @@ public record AuthCredentials(
         String password,
         String email,
         Role role
-) {
+) { 
 
 }
